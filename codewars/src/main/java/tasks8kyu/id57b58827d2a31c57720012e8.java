@@ -11,13 +11,18 @@ package tasks8kyu;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class id57b58827d2a31c57720012e8 {
-    public static double fuelPrice(int litres, double pricePerLitre) {
-        int discont = 5 * litres / 2;
-        if (discont > 25) {
-            discont = 25;
+    private static final int DISCOUNT_CENTS_PRO_STEP = 5;
+    private static final int MAX_DISCOUNT_CENTS = 25;
+    private static final int LITERS_PRO_DISCOUNT_STEP = 2;
+    private static final double CENTS_PRO_DOLLAR = 100.0;
+
+    public static double fuelPrice(int litres, double priceDolorPerLitre) {
+        int discountCents = litres / LITERS_PRO_DISCOUNT_STEP * DISCOUNT_CENTS_PRO_STEP;
+        if (discountCents > MAX_DISCOUNT_CENTS) {
+            discountCents = MAX_DISCOUNT_CENTS;
         }
-        double result = litres * (pricePerLitre - discont);
-        return String.format("%f", result);
+        int resultCents  = (int) Math.round(litres * (priceDolorPerLitre * CENTS_PRO_DOLLAR - discountCents));
+        return resultCents / CENTS_PRO_DOLLAR;
     }
 
     public static void main(String[] args) {
