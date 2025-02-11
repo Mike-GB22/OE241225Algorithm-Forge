@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class id56a4addbfd4a55694100001f {
-    private static final String[] HELLO_WORDS = {"hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"};
+    private static final String[] HELLO_WORDS = {"hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc", "privet"};
     public static boolean validateHello(String greetings){
         return Arrays.stream(HELLO_WORDS)
                 .anyMatch(word -> greetings.toLowerCase().contains(word.toLowerCase()));
