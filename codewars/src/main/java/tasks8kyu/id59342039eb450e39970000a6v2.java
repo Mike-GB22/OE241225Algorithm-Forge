@@ -30,6 +30,7 @@ public class id59342039eb450e39970000a6v2 {
         System.out.println("n = Integer.MAX_VALUE = " + n);
         timerForVariant("IntStream() ->", () -> id59342039eb450e39970000a6.oddCount(n));
         timerForVariant("for ->", () -> oddCount(n));
+        timerForVariant("n / 2 ->", () -> id59342039eb450e39970000a6v3.oddCount(n));
         tests();
     }
 
